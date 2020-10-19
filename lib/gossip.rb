@@ -2,12 +2,11 @@
 require 'csv'
 
 
-
 class Gossip
 
 	attr_accessor :author, :content
 
-	def initilize(author, content)
+	def initialize(author, content)
 		@author = author
 		@content = content
 
@@ -16,12 +15,13 @@ class Gossip
 
 	def save
 		 CSV.open("./db/gossip.csv", "ab") do |csv|
-    		csv << ["#{@author}", "#{@content}"]
+    		csv << [@author, @content]
   		end
-  		
 	end
 end
 
-marine = Gossip.new
-puts marine
-marine.save
+
+
+# marine = Gossip.new("marine", "content")
+# puts marine
+# marine.save
