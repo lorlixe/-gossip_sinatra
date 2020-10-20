@@ -1,6 +1,3 @@
-require gossipe
-
-
 <html>
   <head>
     <title>The Gossip Project</title>
@@ -8,6 +5,12 @@ require gossipe
   <body>
     <h1>Mon super site de gossip, depuis le dossier views !</h1>
   	<a href="/gossips/new/">le texte du lien</a>
+  	<% gossips.each do |gossip| %>
+        <p>
+          <%= gossip.author %><br/>
+          <%= gossip.content %>
+        </p>
+      <% end %>
 
   </body>
 </html>
