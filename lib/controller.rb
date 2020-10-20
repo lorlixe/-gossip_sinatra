@@ -21,12 +21,9 @@ class ApplicationController < Sinatra::Base
       puts "De la bombe, et du coup ça, ça doit être ce que l'utilisateur a passé dans le champ gossip_content : #{params["gossip_content"]}"
       puts "Ça déchire sa mémé, bon allez je m'en vais du serveur, ciao les BGs !"
 
-      redirect '/'
-  end
-  get '/' do
-    erb :index, locals: {gossips: Gossip.all}
   end
 
+ 
   # post '/gossips/new/' do
   # 	Gossip.new("#{@author}", "#{@content}").save
   # end
